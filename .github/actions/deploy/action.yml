@@ -20,12 +20,8 @@ runs:
 
     - name: Stop Existing Service
       run: |
-        $processExists = pm2 list | Select-String -Pattern "greetings-app-${{ inputs.environment }}"
-        if ($processExists) {
-          pm2 delete "greetings-app-${{ inputs.environment }}"
-        }
-        $true
-      shell: powershell
+        pm2 list
+      shell: cmd
 
     - name: Start Service
       run: |
