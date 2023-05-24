@@ -32,4 +32,4 @@ runs:
         dir
         pm2 start -n "greetings-app-${{ inputs.environment }}" -- -- --port ${{ inputs.port }}
         Write-Host "Started greetings-app-${{ inputs.environment }} service."
-      shell: powershell
+      shell: cmd
